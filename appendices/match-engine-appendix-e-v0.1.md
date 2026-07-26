@@ -147,17 +147,25 @@ An unknown role must not prevent a rating. The engine must use common event impa
 
 ## 8. Above-expectation adjustment
 
-The engine may compare realised contribution against a bounded expectation derived from:
+Version 0.1 uses the following mandatory deterministic calculation:
 
-- effective player quality;
-- role suitability;
-- minutes played;
-- team-strength context;
-- opponent strength.
+```text
+MinuteShare = clamp(MinutesPlayed / 90, 0, 1)
+ExpectedContribution = (EffectiveQuality - 75) × 0.012 × MinuteShare
+RealisedContribution = EventImpact + RoleContribution
+AboveExpectation = clamp((RealisedContribution - ExpectedContribution) × 0.22, -0.75, +0.75)
+```
 
-This adjustment must be capped at ±0.75.
+Where:
 
-The purpose is to recognise performance relative to the task faced. It must not become a hidden conversion of Ability into the match rating. A high-quality player with little positive contribution may receive an ordinary or poor rating; a weaker player who performs exceptionally may receive a high rating.
+- `EffectiveQuality` is the resolved Module B effective quality for that player after Form and role-suitability adjustments;
+- `MinutesPlayed` comes from the official resolved line-up state;
+- `EventImpact` and `RoleContribution` are the bounded version 0.1 components defined by this appendix;
+- missing effective quality must use the version 0.1 neutral default of **75** rather than a guessed value.
+
+No additional team-strength or opponent-strength term applies in version 0.1. Those factors may be introduced only by a future appendix version or explicitly versioned calibration amendment.
+
+The purpose is to recognise performance relative to the task faced without turning Ability into an automatic rating award. A high-quality player must produce more realised contribution to receive the same positive adjustment as a lower-quality player. Conversely, quality alone cannot create a positive match rating.
 
 ---
 
@@ -197,7 +205,7 @@ Minimum player-rating row:
   "side": "home",
   "minutes_played": 90,
   "role": "midfielder",
-  "rating": 8.2,
+  "rating": 7.9,
   "components": {
     "baseline": 6.0,
     "event_impact": 0.45,
