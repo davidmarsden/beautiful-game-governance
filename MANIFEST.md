@@ -21,6 +21,7 @@ Current source documents to be imported into this repository:
 - `match-engine-appendix-b-v0.1.md`
 - `match-engine-appendix-c-v0.1.md`
 - `match-engine-appendix-d-v0.4.md`
+- `match-engine-appendix-e-v0.1.md`
 
 ## Registers
 
