@@ -1,6 +1,6 @@
 The Beautiful Game
 
-Loan Fixture Eligibility Appendix v0.1
+Loan Fixture Eligibility Appendix v0.2
 
 Appendix to the Contracts, Agents, Ambition & Club Attractiveness Constitution v2.1 and the World Constitution v0.3
 
@@ -30,34 +30,57 @@ Eligibility must be evaluated from stable IDs, never inferred from club or playe
 
 2. Parent-club restriction dial
 
-Each world or competition may publish:
+The world-level dial is boolean:
 
 `parent_club_restriction = true | false`
 
-The competition-level value overrides the world-level value for fixtures in that competition.
+A competition-level setting is tri-state:
 
-Default: `false`.
+`parent_club_restriction = inherit | true | false`
 
-The default is permissive so that introducing this Appendix does not retrospectively invalidate existing worlds or competitions. A world organiser must positively enable the restriction where desired.
+`inherit` may be represented by an omitted field or an explicit `inherit` value. It must never be materialised as `false` merely because the field is absent.
+
+Resolution order:
+
+1. an explicit competition value of `true` or `false`;
+2. otherwise the world-level value;
+3. otherwise the global default, `false`.
+
+The competition-level value therefore overrides the world only when it is explicitly boolean. An unset competition inherits the world.
+
+The global default is permissive so that introducing this Appendix does not retrospectively invalidate existing worlds. A world organiser must positively enable the restriction where desired.
 
 ---
 
-3. Eligibility rule
+3. Eligibility checkpoint
 
-When `parent_club_restriction = true`, a player is ineligible for a fixture when all of the following are true:
+Every fixture has one canonical eligibility checkpoint.
 
-1. the player is currently on loan;
-2. the selected club is the Loan Club;
-3. the opponent is the Parent Club; and
-4. the loan is active at the fixture's eligibility checkpoint.
+The checkpoint is the fixture lock instant: the authoritative timestamp or turn at which the team sheet becomes final for that fixture. Where a competition does not separately publish a lock instant, the scheduled kickoff timestamp is the checkpoint.
+
+Loan status, Parent Club, Loan Club, loan start and loan end must all be evaluated as at this same checkpoint.
+
+Submission, preset restoration, AI selection and deadline fallback may perform provisional validation earlier, but locking and final match resolution must re-evaluate against the canonical checkpoint. They must not use their own current wall-clock time.
+
+A team sheet accepted provisionally may therefore be rejected or repaired at lock only when the authoritative loan record genuinely changes before the checkpoint. Final match resolution must reproduce the lock determination from the same fixture and loan snapshot.
+
+---
+
+4. Eligibility rule
+
+When the resolved `parent_club_restriction = true`, a player is ineligible for a fixture when all of the following are true at the canonical eligibility checkpoint:
+
+1. the loan record is active;
+2. the selected club is the Loan Club; and
+3. the opponent is the Parent Club.
 
 The restriction applies whether the Parent Club is home or away.
 
-When the dial is `false`, the loan itself does not prevent the player appearing against the Parent Club. Injury, suspension, registration and other eligibility rules continue to apply independently.
+When the resolved dial is `false`, the loan itself does not prevent the player appearing against the Parent Club. Injury, suspension, registration and other eligibility rules continue to apply independently.
 
 ---
 
-4. Enforcement
+5. Enforcement
 
 The same determination must be enforced in every path that can produce a team sheet:
 
@@ -70,11 +93,13 @@ The same determination must be enforced in every path that can produce a team sh
 
 A user-interface warning alone is not sufficient. Invalid selections must be rejected or repaired before the match is resolved.
 
+The lock result must record the resolved rule value, checkpoint, relevant loan record identity and outcome so final resolution can reproduce it exactly.
+
 ---
 
-5. Public information
+6. Public information
 
-The rule value is public competition information.
+The resolved rule value and its source — competition, world or global default — are public competition information.
 
 Where the restriction applies, the player's availability must state:
 
@@ -84,9 +109,9 @@ The explanation must identify the rule, not imply injury, suspension or manager 
 
 ---
 
-6. Determinism and audit
+7. Determinism and audit
 
-The result is deterministic from the fixture, active loan record and published rule value.
+The result is deterministic from the fixture, canonical eligibility checkpoint, authoritative loan record and resolved published rule value.
 
 Any rejected or repaired team sheet must retain an auditable reason code:
 
@@ -96,7 +121,7 @@ No administrator judgement is permitted at selection or resolution time.
 
 ---
 
-7. Relationship to other rules
+8. Relationship to other rules
 
 This Appendix changes fixture eligibility only. It does not alter ownership, wages, loan limits, recall rights, transfer evaluation, promises or development credit.
 
@@ -106,8 +131,9 @@ Suspension and injury rules remain separate. A player may have more than one sim
 
 Dials
 
-- World-level `parent_club_restriction`
-- Competition-level override
-- Default value (`false`)
+- World-level `parent_club_restriction`: `true | false`
+- Competition-level override: `inherit | true | false`
+- Global default: `false`
+- Canonical checkpoint: fixture lock instant, falling back to scheduled kickoff where no separate lock instant exists
 
 All dials must be published before the relevant competition begins and may not be changed retrospectively for already locked fixtures.
