@@ -39,6 +39,8 @@ League Structure — four divisions, twenty clubs each, eighty clubs in the cano
 
 Promotion and Relegation — between each adjacent pair of divisions, four clubs move in each direction at season end. In Divisions 2–4, the top three clubs are promoted automatically. Clubs finishing 4th–7th enter promotion playoffs for the fourth promotion place. In Divisions 1–3, the bottom four clubs are relegated automatically. Division 1 has no promotion and Division 4 has no relegation.
 
+Promotion Playoff Format — 4th plays 7th and 5th plays 6th in two-legged semi-finals, with the higher-finishing club at home in the second leg. If aggregate scores are level after the second leg, extra time and then penalties decide the tie. The semi-final winners meet in a single-match final at a neutral venue. If the final is level after 90 minutes, extra time and then penalties decide the winner. No away-goals rule applies. The playoff winner takes the fourth promotion place.
+
 The world size and movement counts are constitutional structural dials and may be amended through governance. The canonical implementation must not silently substitute a different competition format.
 
 Competitions — League Championship, National Cup, League Cup, Youth Cup; optional future continental and international competitions.
@@ -90,9 +92,11 @@ The canonical squad model uses two independent ownership cohorts:
 
 Youth eligibility is fixed for the season. A player aged 21 or under at the season start is youth-eligible for that season and remains in the youth cohort until the next season boundary, even if he turns 22 during the season. A player who is not youth-eligible counts towards the first-team limit.
 
-A club may therefore own no more than 50 players across the two cohorts. Space in one cohort cannot be used to exceed the cap in the other.
+A club may therefore normally own no more than 50 players across the two cohorts. Space in one cohort cannot be used to exceed the cap in the other.
 
-Competition registration rules may sit inside these ownership limits, but they must never permit a club to bypass the 25/25 ownership caps.
+Season-Boundary Age-Out Exception — a club that was compliant before the season boundary is not forced to release a contracted player merely because one or more youth players age into the first-team cohort. Those players remain owned and contracted. The club enters temporary first-team over-cap status and must return to 25 or fewer first-team players before the first competitive matchday of the new season. While over cap, the club may not register an additional first-team player, complete an incoming first-team transfer, sign a first-team free agent, or renew a contract in a way that increases the first-team count. If the club is still over cap at the compliance deadline, only 25 first-team players may be registered, selected deterministically under the published registration-order rule, and the remaining contracted players stay unregistered until the club becomes compliant. The system must never delete or transfer a player's ownership merely to satisfy the cap.
+
+Competition registration rules may sit inside these ownership limits, but they must never permit a club to bypass the 25/25 ownership caps outside the explicit season-boundary age-out exception above.
 
 Loans, when implemented, must respect the ownership and registration model defined here and any additional limits published in the relevant transfer rules.
 
