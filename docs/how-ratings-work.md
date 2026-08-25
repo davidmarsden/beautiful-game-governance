@@ -49,7 +49,7 @@ The purpose was calibration: to establish and test **TBG's own scale**, not to r
 
 This distinction matters.
 
-**SoccerWiki and SMW-derived datasets are legacy calibration and validation sources. They are not active inputs to current TBG ratings, veteran adjustments, player eligibility, database refreshes or publication.**
+**SoccerWiki and SMW-derived datasets are legacy calibration and validation sources. They are not active inputs to current TBG ratings, player eligibility, database refreshes or publication.**
 
 They remain useful historical evidence because they show how the scale was tested and can help reproduce earlier calibration work.
 
@@ -59,18 +59,19 @@ The current live pipeline instead starts from **Transfermarkt-derived player dat
 
 ## 3. The Live Rating Pipeline
 
-The current player-rating publication path is:
+The governed player-rating publication path is:
 
 1. **Transfermarkt-derived player data**;
-2. **TBG rating model**;
-3. **TBG veteran reality adjustment**;
-4. **publication eligibility checks**;
-5. **player pools and initial squads**;
-6. **published player database and The Pink Final**.
+2. **TBG rating model using the published rating formula**;
+3. **publication eligibility checks**;
+4. **player pools and initial squads**;
+5. **published player database and The Pink Final**.
 
 This separation is deliberate.
 
-Transfermarkt-derived information supplies evidence about the real football world. The TBG model turns governed inputs into a TBG rating. The published database is therefore a TBG interpretation of that evidence, not a Transfermarkt rating in different clothes.
+Transfermarkt-derived information supplies evidence about the real football world. The governed TBG formula turns the relevant inputs into a TBG rating. The published database is therefore a TBG interpretation of that evidence, not a Transfermarkt rating in different clothes.
+
+No undocumented post-model boost or adjustment belongs in this canonical publication path. If the rating formula changes, that change must first be governed and published so the resulting rating remains independently reproducible.
 
 ---
 
