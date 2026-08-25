@@ -5,7 +5,7 @@ Current source documents to be imported into this repository:
 ## Constitutions
 
 - `world-constitution-v0.4.md`
-- `player-rating-constitution-v1.1.md`
+- `player-rating-constitution-v1.2.md`
 - `scouting-finance-constitution-v0.2.md`
 - `contracts-agents-constitution-v2.1.md`
 - `youth-discovery-constitution-v6.1.md`
