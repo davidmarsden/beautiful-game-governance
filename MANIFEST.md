@@ -5,7 +5,7 @@ Current source documents to be imported into this repository:
 ## Constitutions
 
 - `world-constitution-v0.4.md`
-- `player-rating-constitution-v1.1.md`
+- `player-rating-constitution-v1.2.md`
 - `scouting-finance-constitution-v0.2.md`
 - `contracts-agents-constitution-v2.1.md`
 - `youth-discovery-constitution-v6.1.md`
@@ -17,6 +17,7 @@ Current source documents to be imported into this repository:
 
 - `docs/alpha-rulebook-v0.1.md` — implemented/current controlled-alpha rules and explicit known gaps.
 - `docs/road-ahead.md` — non-binding player-friendly overview of constitutional systems beyond the current alpha.
+- `docs/how-ratings-work.md` — player-friendly explanation of The Pink Final, historical rating calibration, the current live rating pipeline, Ratings Updates and New Players.
 
 ## Appendices
 
