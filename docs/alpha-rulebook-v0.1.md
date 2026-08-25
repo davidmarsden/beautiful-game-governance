@@ -59,6 +59,10 @@ A player's **in-game club ownership is independent of his real-world club**. A r
 
 Published player updates are applied through the governed Player Updates / New Players process rather than by silently changing the live world.
 
+If the live external data source required for a governed player-database refresh is unavailable, incomplete or otherwise cannot produce a complete valid source edition, **TBG keeps the last successfully published player-database edition**. The affected Ratings Update / New Players publication is delayed until a complete governed refresh can be produced.
+
+A source outage must not trigger a partial refresh, guessed replacement values, emergency hand-editing or a mixture of old and new source editions. **Source outage causes information lag, not arbitrary rating change.**
+
 ---
 
 ## 5. Player Ratings

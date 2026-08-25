@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.1
+
+- Recorded API-Football as a development/experimentation source that did not become an active input to the final published rating model.
+- Added the current source-outage safety rule to the Alpha Rulebook: retain the last successfully published player-database edition and delay the affected Ratings Update / New Players publication rather than publishing partial, guessed, manually patched or mixed-source ratings.
+- Added Data-Source Resilience to The Road Ahead, including governed fallback/replacement-source principles and the distinction between source independence and source interchangeability.
+- Established that future replacement evidence must be mapped, calibrated and validated before affecting published ratings.
+
 ## 0.3.0
 
 - Added the player-facing How Ratings Work explainer for The Pink Final, historical calibration, the live ratings pipeline, Ratings Updates and New Players.

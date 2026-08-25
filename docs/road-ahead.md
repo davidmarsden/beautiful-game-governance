@@ -279,7 +279,36 @@ These systems must preserve TBG's core transaction rule: a deal either completes
 
 ---
 
-## 17. What Will Not Change
+## 17. Data-Source Resilience
+
+TBG should not depend indefinitely on the continued availability of any single external football-data provider.
+
+Transfermarkt-derived data is currently the primary live evidence source for player Ability and important parts of the player-universe lifecycle. That makes it valuable, but also creates a dependency that the mature game should reduce.
+
+Temporary source failure must never corrupt or partially update the canonical player database. If a complete governed refresh cannot be produced, TBG should continue using the **last successfully published edition** and postpone Ratings Updates and New Players until a valid new edition exists.
+
+In other words: **source outage should cause information lag, never arbitrary rating change.**
+
+Longer term, the data architecture should support governed replacement or fallback evidence sources. A replacement must not be switched in silently. Different providers can use different player identifiers, competition coverage, statistical definitions, market-value methodologies and scales, so any replacement would need explicit mapping, calibration and validation before its data could affect published ratings.
+
+Possible future approaches include:
+
+- a validated alternative source of market-value evidence calibrated onto TBG's published Ability methodology;
+- multiple structured football-data providers contributing independently reproducible evidence;
+- a more source-independent Ability model capable of using observable signals such as minutes, competition strength, age, international level and performance when market-value evidence is unavailable;
+- retained source snapshots and provenance sufficient to reproduce the last valid published edition even when an upstream service is unavailable.
+
+A structured provider such as API-Football may be useful evidence in a future resilience design, but its availability does not make it an automatic substitute for Transfermarkt and it is not currently part of the final rating model.
+
+The governing principle is:
+
+**source independence, not source interchangeability.**
+
+TBG owns its rating methodology, player identity layer and publication rules. External providers supply evidence; no provider should ultimately be able to become a single point of failure for the game's long-term player universe.
+
+---
+
+## 18. What Will Not Change
 
 As TBG becomes deeper, several principles should remain stable:
 

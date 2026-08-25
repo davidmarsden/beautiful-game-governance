@@ -27,12 +27,15 @@ TBG did not begin by inventing an arbitrary 1–100 number for every footballer.
 
 During development we compared large numbers of real players against established football datasets and rating systems to understand how a useful football-management rating scale should be distributed.
 
-Historical calibration and validation used:
+Historical development, calibration and validation used or explored:
 
 - **Transfermarkt-derived data**;
 - **SoccerWiki** ratings;
 - **Soccer Manager / SMW-derived** rating datasets;
+- **API-Football** real-world football data during development and experimentation;
 - TBG's own football hierarchy and calibration targets.
+
+API-Football was useful during development as a structured real-world football-data source, but it did **not** become an input to the final published TBG rating model.
 
 These comparisons helped us test questions such as:
 
@@ -49,9 +52,9 @@ The purpose was calibration: to establish and test **TBG's own scale**, not to r
 
 This distinction matters.
 
-**SoccerWiki and SMW-derived datasets are legacy calibration and validation sources. They are not active inputs to current TBG ratings, player eligibility, database refreshes or publication.**
+**SoccerWiki and SMW-derived datasets are legacy calibration and validation sources. API-Football was explored during development. None of them is an active input to current TBG ratings, player eligibility, database refreshes or publication.**
 
-They remain useful historical evidence because they show how the scale was tested and can help reproduce earlier calibration work.
+They remain useful historical evidence because they show how the model and data architecture were tested and can help reproduce earlier development work.
 
 The current live pipeline instead starts from **Transfermarkt-derived player data** and passes that evidence through TBG's own governed model.
 
@@ -94,6 +97,8 @@ Depending on the available source record, it can help TBG maintain information s
 A real-world club transfer does **not** automatically transfer the player between TBG clubs. TBG ownership remains part of the canonical game world.
 
 Likewise, Transfermarkt market value is evidence used within the wider data/rating process; it is not itself the player's TBG Ability rating.
+
+If the current live source is temporarily unavailable, TBG should continue using the last successfully published player-database edition rather than publishing a partial, guessed or manually patched refresh. A source outage should create information lag, not arbitrary rating change.
 
 ---
 
@@ -147,7 +152,7 @@ The goal is not to claim that one formula can settle every football argument.
 
 The goal is to make TBG's judgement **consistent, transparent and governable**.
 
-External sources give us evidence and useful comparison points. Historical SoccerWiki and SMW data helped us calibrate and validate the scale. Transfermarkt-derived data remains part of the live evidence pipeline. But the final published number is TBG's own governed interpretation.
+External sources give us evidence and useful comparison points. Historical SoccerWiki and SMW data helped us calibrate and validate the scale. API-Football helped us explore structured football data during development. Transfermarkt-derived data remains part of the live evidence pipeline. But the final published number is TBG's own governed interpretation.
 
 **The Pink Final is our interpretation of the evidence.**
 
@@ -159,4 +164,4 @@ That rating is then used consistently by The Beautiful Game until a later govern
 
 If you see a TBG rating in The Pink Final or the Manager Portal, it is a **TBG rating**.
 
-It may be informed by real-world evidence and by a calibration history that used external datasets, but it is not simply copied from Transfermarkt, SoccerWiki or Soccer Manager.
+It may be informed by real-world evidence and by a calibration history that used external datasets, but it is not simply copied from Transfermarkt, SoccerWiki, Soccer Manager or API-Football.
