@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0
+
+- Added the player-facing How Ratings Work explainer for The Pink Final, historical calibration, the live ratings pipeline, Ratings Updates and New Players.
+- Added Player Rating Constitution v1.2, superseding v1.1.
+- Published the deterministic Veteran Reality Adjustment already used by the rating pipeline, including its eligibility thresholds, elite-competition classification, market-value threshold and penalties.
+- Reaffirmed that no undocumented post-model Ability adjustment may affect canonical ratings.
+- Clarified that SoccerWiki and SMW-derived ratings are historical calibration/validation sources rather than active live rating inputs.
+
 ## 0.2.0
 
 - Added World Constitution v0.4.
