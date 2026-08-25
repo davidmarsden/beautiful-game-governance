@@ -62,16 +62,19 @@ The current live pipeline instead starts from **Transfermarkt-derived player dat
 The governed player-rating publication path is:
 
 1. **Transfermarkt-derived player data**;
-2. **TBG rating model using the published rating formula**;
-3. **publication eligibility checks**;
-4. **player pools and initial squads**;
-5. **published player database and The Pink Final**.
+2. **TBG Ability Curve / rating model**;
+3. **published Veteran Reality Adjustment for qualifying high-rated older players**;
+4. **publication eligibility checks**;
+5. **player pools and initial squads**;
+6. **published player database and The Pink Final**.
 
 This separation is deliberate.
 
-Transfermarkt-derived information supplies evidence about the real football world. The governed TBG formula turns the relevant inputs into a TBG rating. The published database is therefore a TBG interpretation of that evidence, not a Transfermarkt rating in different clothes.
+Transfermarkt-derived information supplies evidence about the real football world. The TBG formula turns the relevant inputs into a TBG rating. The published database is therefore a TBG interpretation of that evidence, not a Transfermarkt rating in different clothes.
 
-No undocumented post-model boost or adjustment belongs in this canonical publication path. If the rating formula changes, that change must first be governed and published so the resulting rating remains independently reproducible.
+The Veteran Reality Adjustment is not a hidden administrator tweak. Player Rating Constitution v1.2 publishes the exact qualifying ages, rating threshold, elite-competition classification, market-value threshold and penalties. Given the same source data, another manager can reproduce the same final Ability.
+
+No other undocumented post-model boost or adjustment belongs in the canonical publication path. If the rating formula changes, that change must first be governed and published.
 
 ---
 
