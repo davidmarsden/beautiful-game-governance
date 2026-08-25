@@ -3,7 +3,7 @@
 ## 0.3.1
 
 - Recorded API-Football as a development/experimentation source that did not become an active input to the final published rating model.
-- Added player-facing source-outage behaviour: retain the last successfully published player-database edition rather than publishing partial or guessed ratings.
+- Added the current source-outage safety rule to the Alpha Rulebook: retain the last successfully published player-database edition and delay the affected Ratings Update / New Players publication rather than publishing partial, guessed, manually patched or mixed-source ratings.
 - Added Data-Source Resilience to The Road Ahead, including governed fallback/replacement-source principles and the distinction between source independence and source interchangeability.
 - Established that future replacement evidence must be mapped, calibrated and validated before affecting published ratings.
 
