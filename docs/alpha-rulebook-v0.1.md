@@ -45,6 +45,8 @@ The two caps are independent. An empty youth place cannot be used to sign a 26th
 
 A transfer that would breach either squad cap must not complete.
 
+If youth players age into the first-team cohort at a season boundary and take an otherwise compliant club above 25 first-team players, those players are **not automatically released or transferred**. The club enters temporary over-cap status and must reduce to 25 or fewer before the first competitive matchday of the new season. While over cap, it cannot add further first-team players. If still over cap at the deadline, only 25 may be registered; the remaining contracted players stay owned but unregistered until the club becomes compliant.
+
 ---
 
 ## 4. Players and Real-World Data
@@ -197,16 +199,18 @@ The world is persistent: completed matchdays become part of its history rather t
 
 ## 15. Promotion and Relegation — Known Alpha Gap
 
-The constitutional target is now:
+The constitutional competition rule is:
 
 - **1st–3rd:** automatic promotion from Divisions 2–4;
 - **4th–7th:** promotion playoffs;
 - **playoff winner:** fourth promoted club;
 - **bottom four:** automatic relegation from Divisions 1–3.
 
-The current rollover engine can move four clubs automatically and **does not yet implement the playoff stage**.
+The playoff semi-finals are **4th vs 7th** and **5th vs 6th**, played over two legs with the higher-finishing club at home in the second leg. Level aggregate ties go to extra time and penalties. The final is a single match at a neutral venue, with extra time and penalties if required. There is no away-goals rule.
 
-Therefore the season-end movement mechanism is a known implementation gap and must be brought into line with the World Constitution before it is treated as the final competition rule.
+The current rollover engine can still move four clubs automatically and **does not yet implement this playoff stage**.
+
+Therefore, once World Constitution v0.4 is authoritative, **season rollover must not be executed using the old four-automatic-promotion behaviour**. If the controlled alpha reaches season end before the playoff implementation is complete, the season-end rollover is deferred until the constitutional playoff path is available. League results and final tables remain valid; promotion, relegation and the next-season divisional membership are not committed until the correct playoff stage can be resolved.
 
 ---
 
