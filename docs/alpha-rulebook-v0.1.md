@@ -151,6 +151,8 @@ Identity checks prevent the same real footballer being introduced twice under du
 
 The alpha includes the contract lifecycle required to keep squads viable, including player contracts, expiries and renewals.
 
+A manager can see each squad player's current **weekly wage** in the Manager Portal, alongside his contract information. The wage displayed is the value on that player's current canonical contract.
+
 Incoming transfers, renewals and free-agent acquisitions must respect the club's current wage affordability rules.
 
 The richer constitutional system of agents, player ambitions, promises and competing career choices is **not yet part of the current alpha game**.
