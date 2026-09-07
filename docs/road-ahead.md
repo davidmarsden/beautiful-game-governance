@@ -155,7 +155,7 @@ This creates a way for excellent management at a smaller club to produce resourc
 
 ## 9. A Deeper Football Economy
 
-The controlled alpha starts with cash, wage bills, wage budgets and affordability.
+The controlled alpha starts with cash, **individual player weekly wages**, wage bills, wage budgets and affordability. Managers can see each player's current wage in the squad's General and Contracts views, alongside the club-level wage totals used for budgeting.
 
 The constitutional economy goes much further, including:
 
