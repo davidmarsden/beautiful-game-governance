@@ -12,6 +12,37 @@ The constitutions remain authoritative for the detailed design. This page is a p
 
 ---
 
+## Where the Alpha Is Now — September 2026
+
+The first controlled-alpha managers have already done something valuable: they found and helped us fix a large first wave of real-world problems in recruitment, wages, mobile Team Selection, transfers and post-signing squad state.
+
+The next problem is different. TBG is designed as an **80-club shared football world**, but an alpha cannot depend on recruiting and retaining 80 human testers before the game is ready for them.
+
+So the current development priority is to **simulate a full active game world**.
+
+Every club without a human alpha manager will gain an alpha-only simulation controller. These simulated clubs are intended to:
+
+- submit sensible teams and tactics;
+- buy, sell and list players;
+- compete for free agents;
+- react to squad weaknesses and surpluses;
+- obey the same finances, squad limits, contracts and transfer rules as human clubs;
+- stop acting immediately when a human takes control of the club.
+
+This is deliberately **not the same thing as the future caretaker role** described later on this page. A caretaker is a limited continuity mechanism for a mature live world. Alpha simulation managers exist so we can test what a fully populated TBG world actually feels like — and whether the architecture can cope with the activity of roughly 80 managed clubs.
+
+Once that full-world simulation is stable, the next development tranche is aimed squarely at making the world feel more alive while managers are away:
+
+1. richer news, transfer rumours and recurring media stories;
+2. more active player and transfer behaviour, including preferences and consequences;
+3. board expectations and Board Confidence;
+4. deeper scouting knowledge, discoveries and uncertainty;
+5. manager careers, records, rivalries and historical narrative.
+
+The goal is **not** to manufacture daily-login rewards or punish people for not being online. The goal is to build a football world that keeps happening — so that when you return, there is something meaningful to discover, react to and care about.
+
+---
+
 ## The Idea
 
 The long-term goal is not simply to simulate football matches.
