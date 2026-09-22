@@ -5,7 +5,7 @@
 **Version:** 0.1  
 **Status:** Adopted implementation baseline  
 **Parent authority:** Match Engine Constitution v0.3  
-**Related authority:** Player Rating Constitution v1.1; Information, Media & Communication Constitution v1.2
+**Related authority:** Player Rating Constitution v1.1; Information, Media & Communication Constitution v1.3
 
 ---
 

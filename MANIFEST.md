@@ -10,8 +10,12 @@ Current source documents to be imported into this repository:
 - `contracts-agents-constitution-v2.1.md`
 - `youth-discovery-constitution-v6.1.md`
 - `manager-career-participation-governance-constitution-v1.0.md`
-- `information-media-communication-constitution-v1.2.md`
+- `information-media-communication-constitution-v1.3.md`
 - `match-engine-constitution-v0.3.md`
+
+## Communications
+
+- `communications-social-layer-appendix-v0.1.md`
 
 ## Player-facing documents
 
